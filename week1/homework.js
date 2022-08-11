@@ -68,12 +68,7 @@ console.log("3.)", isCharAVowel("b"));
 // 4. Define a function, as a function expression, sumArraythat takes an array of numbers and returns the sum of those numbers. For example, sumArray([2, 4, 5]);would return 11.
 
 const sumArray = (arr) => {
-  //   for (let i = 1; i < arr.length; i++) {
-  //     arr[i] += arr[i];
-  //     console.log(i);
-  //   }
   let newArr = arr.reduce((a, b) => a + b);
-  console.log(newArr);
   return newArr;
 };
 
@@ -81,10 +76,54 @@ console.log("4.)", sumArray([1, 10, 20]));
 
 // 5. Define a function, as a function declaration, multiplyArraythat takes an array of numbers and returns the product those numbers. For example, multiplyArray([2, 4, 5]);would return 40.
 
+function multiplyArray(numArr) {
+  let multiplied = numArr.reduce((a, b) => a * b);
+  return multiplied;
+}
+
+console.log("5.)", multiplyArray([10, 3, 7, 2]));
+
 // 6. Define a function, as a function expression, numArgsthat returns the number of arguments passed to the function when called.
+
+const numArgs = (...args) => {
+  return args.length;
+};
+
+console.log("6.)", numArgs(1, 2, 4));
 
 // 7. Define a function, as a function declaration, reverseStringthat takes a string, reverses the characters, and returns it. For example, reverseString('rockstar');would return the string "ratskcor".
 
+function reverseString(str) {
+  let split = str.split("");
+  let revStr = split.reverse();
+
+  let finalStr = revStr.join("");
+  return finalStr;
+}
+
+console.log("7.)", reverseString("BEAST"));
+
 // 8. Define a function, as a function expression, longestStringInArraythat takes an array of strings as an argument and returns the length of the longest string.
 
+const longestStringInArray = (strArr) => {
+  let word = 0;
+  for (let i = 0; i < strArr.length; i++) {
+    if (strArr[i].length > word) {
+      word = strArr[i].length;
+    }
+  }
+  return word;
+};
+
+console.log("8.)", longestStringInArray(["fancy", "longest word", "no"]));
 // 9. Define a function, as a function declaration, stringsLongerThanthat takes an array of strings and a number as arguments; and returns an array of the strings that are longer than the number passed in. For example, stringsLongerThan(['say', 'hello', 'in', 'the', 'morning'], 3);would return ["hello", "morning"].
+
+function stringsLongerThan(strArr, num) {
+  let newArr = strArr.filter((item) => item.length > num);
+  return newArr;
+}
+
+console.log(
+  "9.)",
+  stringsLongerThan(["yes", "no", "maybe", "perhaps", "never"], 2)
+);
