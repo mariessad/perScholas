@@ -35,12 +35,49 @@ function maxOfTwoNumbers(a, b) {
   }
 }
 
-console.log("1.)", maxOfTwoNumbers(10, 5));
+console.log("1.)", maxOfTwoNumbers(10, 90));
 // 2. Define a function, as a function expression, maxOfThreethat takes three numbers as arguments and returns the largest of them. Again, the Math.max method is not allowed.
 
+const maxOfThree = (a, b, c) => {
+  if (a > c && a > b) {
+    return a;
+  } else if (b > a && b > c) {
+    return b;
+  } else if (c > a && c > b) {
+    return c;
+  }
+};
+
+console.log("2.)", maxOfThree(77, 600, 3));
 // 3. Define a function, as a function declaration, isCharAVowelthat takes a character as an argument and returns true if it is a vowel, false otherwise.
 
+function isCharAVowel(char) {
+  char.toLowerCase();
+  const vowels = ["a", "e", "i", "o", "u"];
+  for (let i = 0; i < vowels.length; i++) {
+    if (char === vowels[i]) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+
+console.log("3.)", isCharAVowel("b"));
+
 // 4. Define a function, as a function expression, sumArraythat takes an array of numbers and returns the sum of those numbers. For example, sumArray([2, 4, 5]);would return 11.
+
+const sumArray = (arr) => {
+  //   for (let i = 1; i < arr.length; i++) {
+  //     arr[i] += arr[i];
+  //     console.log(i);
+  //   }
+  let newArr = arr.reduce((a, b) => a + b);
+  console.log(newArr);
+  return newArr;
+};
+
+console.log("4.)", sumArray([1, 10, 20]));
 
 // 5. Define a function, as a function declaration, multiplyArraythat takes an array of numbers and returns the product those numbers. For example, multiplyArray([2, 4, 5]);would return 40.
 
