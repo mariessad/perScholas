@@ -1,5 +1,5 @@
 let menu = {
-  breakfast: ["eggSandwich", "eggs bennedict", "bagel", "grand slam"],
+  breakfast: ["egg Sandwich", "eggs bennedict", "bagel", "grand slam"],
   lunch: ["spaghetti", "pasta bolognese", "lasagna", "pasta alfredo"],
   dinner: ["Steak and potatoes", "dinner lasagna", "pasta and garlic bread"],
   drinks: ["milk", "soda", "vodka tonic", "spaghetti water"],

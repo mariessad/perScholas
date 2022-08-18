@@ -9,11 +9,13 @@ body {
 }
 .logo {
   width: 30%;
-  height: 40px;
+  max-width: 300px;
+  height: auto;
 }
 
 .navTab {
   margin-top: 10px;
+  margin-left: 0.5rem;
 }
 .navTab:hover {
   margin-top: 10px;
@@ -21,25 +23,40 @@ body {
 }
 .navBtn {
   height: 40px;
+  padding: 0.5rem;
 }
 .picContainer {
   border: solid red;
   border-width: 0.2px;
+  border-radius: 0.5rem;
   height: 400px;
   background-image: url("https://images.prismic.io/maggianos-prod/76ba6aaa-4bcf-4e03-861c-ff68db997acf_CEW_Family+Wranglers+%282%29.jpg?auto=compress,format&rect=0,3,1920,1272&w=616&h=408");
   background-size: cover;
+  max-width: 700px;
+  margin: auto;
 }
 .mainTitle {
   color: white;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   margin-top: 20%;
   text-align: center;
+  /* font-stretch: ultra-expanded; */
+  text-shadow: 3px 2px black;
+  font-style: italic;
 }
 .learnBtn {
   font-size: 24px;
   background-color: red;
   color: white;
-  margin-left: 40%;
+  margin-left: 35%;
+  margin-top: 1rem;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  border: solid red;
+}
+.learnBtn:hover {
+  background-color: rgba(255, 0, 0, 0.212);
+  border: solid red;
 }
 .magi {
   text-align: center;
@@ -50,10 +67,51 @@ body {
 .foodContainer {
   display: flex;
   justify-content: space-between;
+  margin: 3rem;
 }
 .foodPic {
   width: 80%;
   border-radius: 22px;
   border: solid red;
   border-width: 0.2px;
+}
+.foodCard > img {
+  width: 200px;
+  height: 200px;
+}
+
+/* menu page */
+.menu--container {
+  margin: 1rem;
+  border: 1px solid black;
+}
+.menu--container > h3 {
+  display: block;
+  text-align: center;
+}
+
+.heading {
+  background-color: black;
+  color: white;
+  margin: 1rem;
+  height: 50px;
+  text-align: center;
+}
+
+.menu--item {
+  /* width: 80vw; */
+  height: 25px;
+  text-align: center;
+  border: red solid;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-top: 0.5rem;
+  background-color: lightgray;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 3px;
+}
+
+.red {
+  color: red;
 }
