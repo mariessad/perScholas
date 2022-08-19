@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: rgb(19, 12, 49);
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(133, 71, 190);
+  height: 50px;
+}
+.nav-title {
+  color: white;
+  font-weight: bold;
+}
+.hero-section {
+  display: flex;
+  justify-content: right;
+}
+
+.hero-image {
+  width: 80vw;
+  opacity: 50%;
+  transform: rotate(-20deg);
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+/* about */
+.about {
+  width: 100vw;
+  height: 70vw;
+  background-image: linear-gradient(rgb(19, 12, 49), black);
+  display: flex;
+}
+
+.about-text {
+  width: 50vw;
+  height: auto;
+  color: white;
+  margin: 2rem;
+}
+.about-image {
+  width: 50vw;
+  height: auto;
+  margin: 2rem;
+}
+/* projects */
+.projects {
+  width: 100vw;
+  height: 90vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50vw;
+  height: auto;
+  background-color: rgb(133, 71, 190);
+  margin: 1rem;
+  border-radius: 0.5rem;
+  border: dotted white;
+}
+.project-image {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1rem;
+}
+.card-title {
+  color: white;
+}
+/* contact */
+.contact {
+  width: 100vw;
+  height: 40vw;
+  background-color: rgb(133, 71, 190);
+}
