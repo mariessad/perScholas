@@ -16,37 +16,80 @@
 body {
   /* background-color: rgb(19, 12, 49); */
   background-image: url("./images/aesthetic-pink-desktop\ android-iphone-desktop-hd-backgrounds-wallpapers-1080p-4k-yz9df-1920x1080.jpg");
+  /* backdrop-filter: opacity(0.4); */
   font-family: "rainyheartsmedium";
 }
 nav {
   display: flex;
   justify-content: space-between;
   background-color: var(--pink-one);
-  height: 50px;
+  height: 5rem;
+  width: 100vw;
   border-bottom: dotted white;
+}
+.nav-ul {
+  display: flex;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.nav-ul > li {
+  margin: 1rem;
+  list-style: none;
+  font-weight: bold;
+  /* padding: 0.5rem; */
+}
+.nav-ul > li:hover {
+  border: dotted 3px white;
 }
 .nav-title {
   color: white;
   font-weight: bold;
+  margin: 1rem;
+  font-size: 2rem;
 }
+
 .hero-section {
   display: flex;
-  justify-content: right;
+  justify-content: center;
 }
 
 .hero-image {
   width: 80vw;
-  opacity: 50%;
-  transform: rotate(-20deg);
+  /* opacity: 50%; */
+  /* transform: rotate(-20deg); */
   margin-top: 2rem;
   margin-bottom: 3rem;
+  color: var(--pink-two);
+}
+
+.colors {
+  color: white;
+  padding: 0.5em;
+  text-shadow: 1px 1px rgba(black, 0.5);
+  position: absolute;
+  /* width: 100%;
+  height: 100%; */
+  /* user-select: none; */
+  z-index: 1;
+}
+
+.rainbow {
+  width: 270px;
+  height: 145px;
+  max-height: 145px;
+  margin-top: 2.4rem;
+  border-radius: 0.3rem;
+  /* margin: auto; */
 }
 /* about */
 .about {
-  width: 100vw;
+  width: 100%;
   height: 70vw;
   background-image: linear-gradient(var(--pink-one), var(--pink-two));
   opacity: 90%;
+  border-radius: 1rem;
+  border: solid 10px white;
   display: flex;
 }
 
@@ -55,11 +98,15 @@ nav {
   height: auto;
   color: white;
   margin: 2rem;
+  border: solid 10px white;
+  border-radius: 1rem;
 }
 .about-image {
   width: 50vw;
   height: auto;
   margin: 2rem;
+  border: solid 10px white;
+  border-radius: 1rem;
 }
 /* projects */
 .projects {
@@ -74,7 +121,7 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 50vw;
+  /* width: 50vw; */
   height: auto;
   background-color: var(--pink-one);
   margin: 1rem;
@@ -82,10 +129,10 @@ nav {
   border: dotted white;
 }
 .project-image {
-  width: 100%;
+  width: 200px;
   height: auto;
   border-radius: 0.5rem;
-  margin: 1rem;
+  margin: 20px;
 }
 .card-title {
   color: white;
