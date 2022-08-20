@@ -1,15 +1,29 @@
+:root {
+  --pink-one: rgb(255, 131, 214);
+  --pink-two: rgb(255, 22, 177);
+}
+@font-face {
+  font-family: "rainyheartsmedium";
+  src: url("./font/rainyhearts-webfont.woff") format("woff"),
+    url("./font/rainyhearts-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 * {
   margin: 0;
   padding: 0;
 }
 body {
-  background-color: rgb(19, 12, 49);
+  /* background-color: rgb(19, 12, 49); */
+  background-image: url("./images/aesthetic-pink-desktop\ android-iphone-desktop-hd-backgrounds-wallpapers-1080p-4k-yz9df-1920x1080.jpg");
+  font-family: "rainyheartsmedium";
 }
 nav {
   display: flex;
   justify-content: space-between;
-  background-color: rgb(133, 71, 190);
+  background-color: var(--pink-one);
   height: 50px;
+  border-bottom: dotted white;
 }
 .nav-title {
   color: white;
@@ -31,7 +45,8 @@ nav {
 .about {
   width: 100vw;
   height: 70vw;
-  background-image: linear-gradient(rgb(19, 12, 49), black);
+  background-image: linear-gradient(var(--pink-one), var(--pink-two));
+  opacity: 90%;
   display: flex;
 }
 
@@ -61,7 +76,7 @@ nav {
   justify-content: center;
   width: 50vw;
   height: auto;
-  background-color: rgb(133, 71, 190);
+  background-color: var(--pink-one);
   margin: 1rem;
   border-radius: 0.5rem;
   border: dotted white;
@@ -79,5 +94,5 @@ nav {
 .contact {
   width: 100vw;
   height: 40vw;
-  background-color: rgb(133, 71, 190);
+  background-color: var(--pink-one);
 }
