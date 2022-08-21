@@ -4,7 +4,7 @@
 //   document.querySelector("nav").innerHTML = "color:red";
 // }
 
-//
+// Changing colors div
 
 const HEX_ALPHABET = "0123456789abcdef";
 const COLORS_NUM = 2;

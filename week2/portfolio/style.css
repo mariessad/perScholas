@@ -35,6 +35,7 @@ nav {
 
 .nav-ul > li {
   margin: 1rem;
+  padding: 3%;
   list-style: none;
   font-weight: bold;
   /* padding: 0.5rem; */
@@ -55,12 +56,21 @@ nav {
 }
 
 .hero-image {
-  width: 80vw;
+  max-width: 400px;
+  /* width: 80vw; */
   /* opacity: 50%; */
   /* transform: rotate(-20deg); */
   margin-top: 2rem;
   margin-bottom: 3rem;
   color: var(--pink-two);
+}
+.gif {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  right: 44%;
+  top: 20%;
+  z-index: 2;
 }
 
 .colors {
@@ -77,7 +87,6 @@ nav {
 .rainbow {
   width: 270px;
   height: 145px;
-  max-height: 145px;
   margin-top: 2.4rem;
   border-radius: 0.3rem;
   /* margin: auto; */
@@ -89,18 +98,44 @@ nav {
   background-image: linear-gradient(var(--pink-one), var(--pink-two));
   opacity: 90%;
   border-radius: 1rem;
-  border: solid 10px white;
+  border: solid 8px white;
   display: flex;
 }
 
 .about-text {
-  width: 50vw;
+  width: 50%;
   height: auto;
   color: white;
   margin: 2rem;
   border: solid 10px white;
   border-radius: 1rem;
+  text-align: center;
 }
+
+.about-text > p {
+  margin: 10px;
+  font-size: 1.5rem;
+}
+.browser-border {
+  width: 100%;
+  height: 30px;
+  color: black;
+  background-color: white;
+  border: 2px solid pink;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  font-weight: bold;
+  font-size: 25px;
+  display: flex;
+  justify-content: end;
+}
+.square-icon {
+  width: 1.6rem;
+}
+hr {
+  height: 20px;
+}
+
 .about-image {
   width: 50vw;
   height: auto;
@@ -121,8 +156,9 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  /* align-items: stretch; */
   /* width: 50vw; */
-  height: auto;
+  /* height: auto; */
   background-color: var(--pink-one);
   margin: 1rem;
   border-radius: 0.5rem;
@@ -136,6 +172,11 @@ nav {
 }
 .card-title {
   color: white;
+  text-align: center;
+}
+
+.card-text {
+  text-align: center;
 }
 /* contact */
 .contact {
