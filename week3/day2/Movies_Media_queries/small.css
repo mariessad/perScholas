@@ -17,9 +17,24 @@ body {
   flex-direction: column;
   justify-content: center;
   margin-top: 3rem;
+  color: rgb(216, 216, 216);
+  font-family: "creepster";
+}
+.knife-icon {
+  width: 40px;
+  height: auto;
+  margin: auto;
+  margin-bottom: 3em;
+  margin-top: 1rem;
+  filter: invert(100%);
 }
 .movie-title {
   text-align: center;
+  text-shadow: 3px 3px black;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  font-size: 30px;
+  letter-spacing: 3px;
 }
 .movie-image {
   width: 300px;
@@ -27,6 +42,44 @@ body {
   margin: auto;
   border: solid black;
   border-radius: 0.5rem;
+  margin-top: 0.5rem;
 }
-/* .movie-text {
-} */
+.movie-text {
+  text-align: center;
+  margin: 8px;
+}
+
+.red {
+  color: red;
+}
+.movie-info {
+}
+
+iframe {
+  width: 460px;
+  height: 300px;
+  margin: auto;
+  border-radius: 0.5rem;
+  border: solid black;
+}
+.buy-button {
+  height: 65px;
+  width: 118px;
+  align-self: center;
+  margin: 2rem;
+  border: solid red;
+  border-radius: 0.5rem;
+  font-size: large;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+}
+
+.buy-button:hover {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  inset: (80% -6px 5% 0);
+  cursor: pointer;
+}
