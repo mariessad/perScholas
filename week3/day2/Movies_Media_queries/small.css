@@ -52,15 +52,23 @@ body {
 .red {
   color: red;
 }
-.movie-info {
+/* .movie-info {
+  display: block;
+} */
+.movie-desc {
+  width: 320px;
+  height: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: auto;
+  margin-top: 1rem;
 }
-
 iframe {
   width: 460px;
   height: 300px;
   margin: auto;
   border-radius: 0.5rem;
   border: solid black;
+  margin-top: 2rem;
 }
 .buy-button {
   height: 65px;
