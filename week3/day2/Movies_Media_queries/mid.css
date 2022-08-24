@@ -69,6 +69,7 @@ iframe {
   margin: auto;
   border-radius: 0.5rem;
   border: solid black;
+  margin-top: 2rem;
 }
 
 iframe:hover {
@@ -95,4 +96,8 @@ iframe:hover {
   padding-right: 0.3rem;
   background: red;
   box-shadow: 2px 2px black;
+}
+
+.toggle-hide {
+  display: none;
 }

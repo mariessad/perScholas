@@ -91,3 +91,7 @@ iframe {
   inset: (80% -6px 5% 0);
   cursor: pointer;
 }
+
+.toggle-hide {
+  display: none;
+}
