@@ -3,6 +3,8 @@ let movieDivTwo = document.querySelector(".movie-two");
 let movieDivThree = document.querySelector(".movie-three");
 
 let movieTab = document.querySelector(".movie-tab");
+let movieTabOne = document.querySelector(".movie-tab-two");
+let movieTabTwo = document.querySelector(".movie-tab-three");
 // console.log(movieDiv);
 
 const eventHandler = () => {
@@ -24,3 +26,5 @@ movieDivTwo.addEventListener("click", eventHandler1);
 movieDivThree.addEventListener("click", eventHandler2);
 
 movieTab.addEventListener("click", eventHandler);
+movieTabOne.addEventListener("click", eventHandler1);
+movieTabTwo.addEventListener("click", eventHandler2);
