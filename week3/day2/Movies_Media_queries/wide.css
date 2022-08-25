@@ -29,7 +29,7 @@ body {
   margin-bottom: 3em;
   margin-top: 1rem;
   filter: invert(100%);
-  display: none;
+  /* display: none; */
 }
 .movie-title {
   text-align: center;
@@ -87,9 +87,9 @@ iframe {
   /* align-items: baseline; */
 }
 
-iframe:hover {
+/* iframe:hover {
   border: solid white;
-}
+} */
 
 .buy-button {
   height: 65px;
@@ -127,4 +127,17 @@ iframe:hover {
 
 .toggle-hide {
   display: none !important;
+}
+
+.movie-tab {
+  width: 300px;
+  height: 40px;
+  margin: auto;
+  background-color: #160005;
+  text-align: center;
+  padding: 3%;
+}
+
+.toggle-show {
+  display: none;
 }
