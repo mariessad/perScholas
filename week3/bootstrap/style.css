@@ -1,0 +1,26 @@
+body {
+  background-color: rgb(132, 189, 255) !important;
+}
+
+.med-icon {
+  width: 5rem;
+  max-width: 6rem;
+  height: auto;
+  margin-right: 1rem;
+}
+
+#footer {
+  background-color: white;
+  padding: 2%;
+}
+
+#hero-image {
+  width: 150px;
+  height: auto;
+  margin-top: 1rem;
+}
+#hero-image-1 {
+  width: 200px;
+  height: auto;
+  margin-top: 1rem;
+}
