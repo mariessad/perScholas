@@ -95,3 +95,19 @@ iframe {
 .toggle-hide {
   display: none;
 }
+.movie-tab,
+.movie-tab-three,
+.movie-tab-two {
+  width: 200px;
+  height: 40px;
+  margin: auto;
+  background-color: #160005;
+  text-align: center;
+  padding: 3%;
+  border-radius: 0.5rem;
+  border: solid 2px rgb(129, 0, 0);
+  cursor: pointer;
+}
+.toggle-show {
+  display: none;
+}

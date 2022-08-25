@@ -132,14 +132,33 @@ iframe {
 .movie-tab,
 .movie-tab-three,
 .movie-tab-two {
-  width: 300px;
+  width: 100px;
   height: 40px;
   margin: auto;
   background-color: #160005;
   text-align: center;
   padding: 3%;
+  border-radius: 0.5rem;
+  border: solid 2px rgb(129, 0, 0);
+  cursor: pointer;
 }
 
 .toggle-show {
   display: none;
+}
+
+.spin {
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: one;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
