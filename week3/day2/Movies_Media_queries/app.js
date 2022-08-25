@@ -7,7 +7,15 @@ const eventHandler = () => {
   //   alert("clicked!");
   movieDiv.classList.toggle("toggle-hide");
 };
+const eventHandler1 = () => {
+  //   alert("clicked!");
+  movieDivTwo.classList.toggle("toggle-hide");
+};
+const eventHandler2 = () => {
+  //   alert("clicked!");
+  movieDivThree.classList.toggle("toggle-hide");
+};
 
 movieDiv.addEventListener("click", eventHandler);
-movieDivTwo.addEventListener("click", eventHandler);
-movieDivThree.addEventListener("click", eventHandler);
+movieDivTwo.addEventListener("click", eventHandler1);
+movieDivThree.addEventListener("click", eventHandler2);
