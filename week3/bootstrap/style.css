@@ -24,3 +24,20 @@ body {
   height: auto;
   margin-top: 1rem;
 }
+#card-image {
+  background-size: 100%;
+  border: 2px solid green;
+}
+
+#card-text-1 {
+  color: rgb(63, 184, 63);
+  -webkit-text-stroke: 1px rgb(54, 54, 54);
+  text-shadow: 2px 2px rgb(54, 54, 54);
+}
+
+small {
+  color: black;
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 2%;
+}
