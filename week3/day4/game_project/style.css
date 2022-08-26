@@ -2,7 +2,17 @@
   padding: 0;
   margin: 0;
 }
-
+body {
+  background-color: pink;
+}
+h1,
+h3 {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+h1 {
+  color: rgb(226, 0, 124);
+}
 #score {
   text-align: center;
 }
@@ -16,6 +26,7 @@
   background-repeat: no-repeat;
   margin: auto;
   margin-top: 1rem;
+  border-radius: 0.5rem;
 }
 
 #character {
