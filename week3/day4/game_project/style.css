@@ -1,0 +1,72 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#score {
+  text-align: center;
+}
+
+#game {
+  display: block;
+  width: 586px;
+  height: 280px;
+  border: solid rgb(255, 91, 219);
+  background-image: url(https://image.shutterstock.com/image-vector/pink-landscape-wallpaper-background-view-260nw-1262652052.jpg);
+  background-repeat: no-repeat;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+#character {
+  height: 60px;
+  width: 60px;
+  position: relative;
+  top: 200px;
+  background-image: url(./bunny-pixel.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#obstacle {
+  height: 60px;
+  width: 60px;
+  position: relative;
+  top: 140px;
+  left: 520px;
+  background-image: url(./monster-pixel.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: monster 1.33s infinite;
+}
+
+@keyframes monster {
+  0% {
+    left: 520px;
+  }
+  100% {
+    left: -10px;
+  }
+}
+#health {
+  height: 60px;
+  width: 60px;
+  position: relative;
+  top: 10px;
+  left: 515px;
+  background-image: url(./food-pixel.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: health 2.33s infinite;
+}
+
+@keyframes health {
+  0% {
+    left: 520;
+    top: 10px;
+  }
+  100% {
+    left: -10px;
+    top: -10px;
+  }
+}
