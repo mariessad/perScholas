@@ -70,3 +70,22 @@
     top: -10px;
   }
 }
+
+.jump-animation {
+  animation: jump 0.5s;
+}
+
+@keyframes jump {
+  0% {
+    top: 200px;
+  }
+  50% {
+    top: 60px;
+  }
+  75% {
+    top: 60px;
+  }
+  100% {
+    top: 200px;
+  }
+}
