@@ -56,3 +56,28 @@ class Person {
     this.bankAccount -= hamster.getPrice();
   }
 }
+
+const timmy = new Person("Timmy");
+
+timmy.age += 5;
+
+for (let i = 0; i < 5; i++) {
+  timmy.eat();
+}
+
+for (let i = 0; i < 5; i++) {
+  timmy.excercise();
+}
+
+const gus = new Hamster("Gus");
+gus.owner = "timmy";
+timmy.buyHamster(gus);
+
+for (let i = 0; i < 15; i++) {
+  timmy.ageUp();
+}
+
+timmy.eat();
+timmy.eat();
+timmy.excercise();
+timmy.excercise();
