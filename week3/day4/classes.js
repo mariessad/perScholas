@@ -81,3 +81,35 @@ timmy.eat();
 timmy.eat();
 timmy.excercise();
 timmy.excercise();
+
+// The factory pattern is a creational design pattern that provides a generic interface
+//for creating objects. In the factory pattern, we can specify the type of object being created and we do not need to explicitly require a constructor.
+// Factory gives us an object creation mechanism that is both flexible and reusable.
+
+class Dinner {
+  constructor(appetizer, entree, dessert) {
+    this.appetizer = appetizer;
+    this.entree = entree;
+    this.dessert = dessert;
+  }
+}
+
+class Chef {
+  constructor() {
+    this.dinnerSet = [];
+  }
+  makeDinner(arg1, arg2, arg3) {
+    let newDinner = new Dinner(
+      (Dinner.appetizer = arg1),
+      (Dinner.entree = arg2),
+      (Dinner.dessert = arg3)
+    );
+    this.dinnerSet.push(newDinner);
+    return newDinner;
+  }
+}
+
+let cheffy = new Chef();
+cheffy.makeDinner("oysters", "lobster roll", "chocolate souffle");
+
+console.log(cheffy.dinnerSet);
