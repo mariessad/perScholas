@@ -89,3 +89,27 @@
     top: 200px;
   }
 }
+
+.score {
+  margin: auto;
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+button {
+  padding: 2%;
+  margin: auto;
+  display: block;
+  margin-top: 1rem;
+  background-color: rgb(255, 91, 219);
+  border: solid rgb(226, 0, 124);
+  border-radius: 0.5rem;
+  color: white;
+  font-size: large;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgb(226, 0, 124);
+}
