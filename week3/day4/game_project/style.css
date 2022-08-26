@@ -26,6 +26,7 @@
   background-image: url(./bunny-pixel.png);
   background-size: contain;
   background-repeat: no-repeat;
+  display: block;
 }
 
 #obstacle {
@@ -37,7 +38,7 @@
   background-image: url(./monster-pixel.png);
   background-size: contain;
   background-repeat: no-repeat;
-  animation: monster 1.33s infinite;
+  /* animation: monster 1.33s infinite; */
 }
 
 @keyframes monster {
@@ -48,7 +49,7 @@
     left: -10px;
   }
 }
-#health {
+/* #health {
   height: 60px;
   width: 60px;
   position: relative;
@@ -58,6 +59,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   animation: health 2.33s infinite;
+  display: block;
 }
 
 @keyframes health {
@@ -69,7 +71,7 @@
     left: -10px;
     top: -10px;
   }
-}
+} */
 
 .jump-animation {
   animation: jump 0.5s;
