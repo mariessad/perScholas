@@ -88,3 +88,38 @@
 
 // When you have a piece of functionality tested and working, commit it.
 // Try not to commit broken code. Unsure of when to commit? Commit when something works. You want to save working code.
+
+//psuedocode
+// create an ship object and an alien object. Create a method for the ship to attack an alien, that method should reduced the aliens points
+//make a method for the alien to attack the ship (or should it be the same method? probably because it's going to try to do the same damage)
+// make a game object for the game to keep track of health/score, retreat to end the game, or move on to the next ship
+
+const USS_HelloWorld = {
+  hull: 20,
+  firepower: 5,
+  accuracy: 0.7,
+  attack(alien) {
+    alien.hull -= USS_HelloWorld.hull;
+  },
+};
+// there are 6 aliens, should create individually or with a constructor?
+let max1 = 6;
+let min1 = 3;
+let max2 = 2;
+let min2 = 4;
+let max3 = 0.6;
+let min3 = 0.8;
+
+const Alien = {
+  // hull: between 3 and 6
+  hull: Math.floor(Math.random() * (max1 - min1 + 1)) + min1,
+  // firepower: between 2 and 4
+  firepower: Math.floor(Math.random() * (max2 - min2 + 1)) + min2,
+  // accuracy - between .6 and .8
+  accuracy: Math.floor(Math.random() * (max3 - min3 + 1)) + min3,
+};
+console.log(Alien.hull);
+console.log(Alien.firepower);
+console.log(Alien.accuracy);
+
+const Game = {};
