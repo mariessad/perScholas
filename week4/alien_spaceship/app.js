@@ -99,7 +99,11 @@ const USS_HelloWorld = {
   firepower: 5,
   accuracy: 0.7,
   attack(alien) {
-    alien.hull -= USS_HelloWorld.hull;
+    if (alien.accuracy < USS_HelloWorld.accuracy) {
+      alien.hull -= USS_HelloWorld.firepower;
+    }
+
+    console.log(alien.hull);
   },
 };
 // there are 6 aliens, should create individually or with a constructor?
@@ -117,9 +121,38 @@ const Alien = {
   firepower: Math.floor(Math.random() * (max2 - min2 + 1)) + min2,
   // accuracy - between .6 and .8
   accuracy: Math.floor(Math.random() * (max3 - min3 + 1)) + min3,
+  attackShip(ship) {
+    ship.hull -= Alien.hull;
+    console.log(ship.hull);
+  },
 };
+
+class Aliens {
+  constructor(hull, firepower, accuracy, attack) {
+    this.hull = Alien.hull;
+    this.firepower = Alien.firepower;
+    this.accuracy = Alien.accuracy;
+    this.attack = Alien.attackShip();
+  }
+}
 console.log(Alien.hull);
 console.log(Alien.firepower);
 console.log(Alien.accuracy);
 
-const Game = {};
+if (USS_HelloWorld.hull <= 0) {
+  console.log("game over");
+  //   then restart the game
+}
+if (Alien.hull <= 0) {
+  console.log("alien defeated");
+}
+
+// so first, we attack an alien, the alien will only be hit if a Math.random call is below the accuracy threshold
+//then the alien attacks you
+// add a status console log for the end of the round
+// attacks keep occuring until someone's hull is at zero
+USS_HelloWorld.attack(Alien);
+console.log(Alien);
+const Game = {
+  // can't reference the ship object inside the game object
+};
