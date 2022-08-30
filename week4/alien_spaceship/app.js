@@ -98,14 +98,13 @@ const USS_HelloWorld = {
   hull: 20,
   firepower: 5,
   accuracy: 0.7,
-  attack(alien) {
-    if (alien.accuracy < USS_HelloWorld.accuracy) {
-      alien.hull -= USS_HelloWorld.firepower;
-    }
+  attack: function () {
+    alienArr.hull -= USS_HelloWorld.firepower;
 
-    console.log(alien.hull);
+    // console.log(alien.hull);
   },
 };
+
 // there are 6 aliens, should create individually or with a constructor?
 let max1 = 6;
 let min1 = 3;
@@ -114,45 +113,76 @@ let min2 = 4;
 let max3 = 0.6;
 let min3 = 0.8;
 
-const Alien = {
-  // hull: between 3 and 6
-  hull: Math.floor(Math.random() * (max1 - min1 + 1)) + min1,
-  // firepower: between 2 and 4
-  firepower: Math.floor(Math.random() * (max2 - min2 + 1)) + min2,
-  // accuracy - between .6 and .8
-  accuracy: Math.floor(Math.random() * (max3 - min3 + 1)) + min3,
-  attackShip(ship) {
-    ship.hull -= Alien.hull;
-    console.log(ship.hull);
-  },
-};
+let alienArr = [];
+// const Alien = {
+//   // hull: between 3 and 6
+//   hull: Math.floor(Math.random() * (max1 - min1 + 1)) + min1,
+//   // firepower: between 2 and 4
+//   firepower: Math.floor(Math.random() * (max2 - min2 + 1)) + min2,
+//   // accuracy - between .6 and .8
+//   accuracy: Math.floor(Math.random() * (max3 - min3 + 1)) + min3,
+// };
+
+//  const attackShip= (ship)=> {
+//     ship.hull -= Alien.hull;
+//     console.log(ship.hull);
+//   },
+// console.log(alienArr);
+
+let hull = Math.floor(Math.random() * (max1 - min1 + 1)) + min1;
+// firepower: between 2 and 4
+let firepower = Math.floor(Math.random() * (max2 - min2 + 1)) + min2;
+// accuracy - between .6 and .8
+let accuracy = Math.floor(Math.random() * (max3 - min3 + 1)) + min3;
 
 class Aliens {
-  constructor(hull, firepower, accuracy, attack) {
-    this.hull = Alien.hull;
-    this.firepower = Alien.firepower;
-    this.accuracy = Alien.accuracy;
-    this.attack = Alien.attackShip();
+  constructor(hull, firepower, accuracy) {
+    this.hull = hull;
+    this.firepower = firepower;
+    this.accuracy = accuracy;
   }
+  attackShip = function () {
+    USS_HelloWorld.hull -= alienArr.firepower;
+  };
 }
-console.log(Alien.hull);
-console.log(Alien.firepower);
-console.log(Alien.accuracy);
+// function attackShip(ship) {
+//   ship.hull -= alienArr.firepower;
+//   //   console.log(ship.hull);
+// }
 
-if (USS_HelloWorld.hull <= 0) {
-  console.log("game over");
-  //   then restart the game
+for (let i = 1; i <= 6; i++) {
+  alienArr.push(new Aliens(hull, firepower, accuracy));
 }
-if (Alien.hull <= 0) {
-  console.log("alien defeated");
-}
-
 // so first, we attack an alien, the alien will only be hit if a Math.random call is below the accuracy threshold
 //then the alien attacks you
 // add a status console log for the end of the round
 // attacks keep occuring until someone's hull is at zero
-USS_HelloWorld.attack(Alien);
-console.log(Alien);
-const Game = {
-  // can't reference the ship object inside the game object
+// create a battle function?
+
+const battle = () => {
+  for (let i = 0; i < alienArr.length; i++) {
+    while (USS_HelloWorld.hull > 0 && alienArr[i].hull > 0) {
+      console.log("Ship attacks alien");
+      //   console.log(USS_HelloWorld.hull);
+      USS_HelloWorld.attack(alienArr[i]);
+      console.log("alien attacks ship");
+      alienArr[i].attackShip();
+
+      if (alienArr[i] <= 0) {
+        console.log("one");
+        delete alienArr[i];
+        //   then restart the game
+      } else if (USS_HelloWorld.hull <= 0) {
+        console.log("two");
+        // then delete that alien and go to the next one
+      } else {
+        console.log("whattt");
+      }
+    }
+  }
 };
+// console.log(battle());
+battle();
+
+console.log(USS_HelloWorld.hull);
+console.log(alienArr);
