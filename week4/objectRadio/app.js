@@ -30,16 +30,29 @@ const Radio = {
         (song4 = { title: "I didn't write this", artist: "popstar" }),
       ],
     }),
+    (station3 = {
+      name: "rap",
+      songs: [
+        (song1 = { title: "Lets not get anything started", artist: "in here" }),
+        (song2 = { title: "babyman", artist: "Adult" }),
+        (song3 = { title: "maybe don't", artist: "barry white" }),
+        (song4 = { title: "I didn't write this", artist: "popstar" }),
+      ],
+    }),
   ],
 
   changeStation: function () {
-    const radioStation = Math.floor(Math.random() * 2);
-    const song = Math.floor(Math.random() * 4);
-    const title = Radio.stations[radioStation].songs[song];
+    length = Radio.stations.length;
 
-    let button;
-    console.log(title);
+    radioStation = Math.floor(Math.random() * length);
+    song = Math.floor(Math.random() * 4);
+    title = Radio.stations[radioStation].songs[song];
+
+    // console.log(title);
+    console.log("Now Playing " + title.title + " by " + title.artist);
   },
 };
 
 Radio.changeStation();
+
+// const button = document.querySelector("button");
