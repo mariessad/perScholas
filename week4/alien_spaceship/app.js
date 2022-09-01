@@ -98,10 +98,10 @@ const USS_HelloWorld = {
   hull: 20,
   firepower: 5,
   accuracy: 0.7,
-  attack: function () {
-    alienArr.hull -= USS_HelloWorld.firepower;
+  attack: function (ship) {
+    ship.hull -= USS_HelloWorld.firepower;
 
-    // console.log(alien.hull);
+    console.log(ship.hull);
   },
 };
 
@@ -160,29 +160,41 @@ for (let i = 1; i <= 6; i++) {
 // create a battle function?
 
 const battle = () => {
+  let h3 = document.querySelector(".h3");
+  let paragraph = document.querySelector(".paragraph");
+  let paragraph1 = document.querySelector(".paragraph1");
+  h3.innerText = "Game Starting...";
+
   for (let i = 0; i < alienArr.length; i++) {
     while (USS_HelloWorld.hull > 0 && alienArr[i].hull > 0) {
       console.log("Ship attacks alien");
+      paragraph.innerText = "The USS HelloWorld attacks the first Alien";
       //   console.log(USS_HelloWorld.hull);
       USS_HelloWorld.attack(alienArr[i]);
+
       console.log("alien attacks ship");
       alienArr[i].attackShip();
-
-      if (alienArr[i] <= 0) {
-        console.log("one");
+      paragraph1.innerText += "(ФwФ) Alien attacks the USS HelloWorld!";
+      console.log(alienArr[i].hull);
+      if (alienArr[i].hull <= 0) {
+        console.log("ALIEN DEFEATED");
         delete alienArr[i];
-        //   then restart the game
       } else if (USS_HelloWorld.hull <= 0) {
         console.log("two");
-        // then delete that alien and go to the next one
       } else {
         console.log("whattt");
+        return;
       }
     }
   }
 };
 // console.log(battle());
-battle();
+
+let startButton = document.getElementById("start");
+
+startButton.addEventListener("click", battle);
+
+// battle();
 
 console.log(USS_HelloWorld.hull);
 console.log(alienArr);
