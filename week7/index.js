@@ -44,28 +44,91 @@ mongoose.connection.once("open", () => {
 
 // index
 app.get("/students", (req, res) => {
-  res.send("Index");
+  Student.find({}, (err, allStudents) => {
+    console.log(err);
+
+    res.render("Index", {
+      students: allStudents,
+    });
+  });
 });
 // new
+app.get("/students/new", (req, res) => {
+  res.render("New", {});
+});
 // POST
+
+app.post("/students", (req, res) => {
+  if (req.body.isPassing === "on") {
+    req.body.isPassing = true;
+  } else {
+    req.body.isPassing = false;
+  }
+
+  Student.create(req.body, (err, createdStudent) => {
+    console.log(err);
+  });
+
+  res.redirect("/students");
+});
+
 // edit
-// update
+app.get("/students/:id/edit", (req, res) => {
+  Student.findById(req.params.id, (err, foundStudent) => {
+    console.log(err);
+    if (!err) {
+      res.render("Edit", {
+        student: foundStudent,
+        //pass in the foundStudent so we can prefill the form
+      });
+    } else {
+      res.send({ msg: err.message });
+    }
+  });
+});
+// put patch to update
+app.put("/students/:id", (req, res) => {
+  if (req.body.isPassing === "on") {
+    req.body.isPassing = true;
+  } else {
+    req.body.isPassing = false;
+  }
+  Student.findByIdAndUpdate(req.params.id, req.body, (err, updatedStudent) => {
+    console.log(err);
+    res.redirect(`/students/${req.params.id}`);
+  });
+});
+
 // DELETE
+app.delete("/students/:id", (req, res) => {
+  Student.findByIdAndRemove(req.params.id, (err, data) => {
+    res.redirect("/students");
+  });
+});
 // SEEDS -- a route where we create content dynamically
 
-app.get('/students/seed', (req,res)=>{
-    Student.create([
-  { name: "student1", gpa: "2.0", isPassing: false },
-  { name: "student2", gpa: "4.0", isPassing: true },
-],
-// callback function
- (err, data)=> {
-    res.redirect('/students')
-
+app.get("/students/seed", (req, res) => {
+  Student.create(
+    [
+      { name: "student1", gpa: "2.0", isPassing: false },
+      { name: "student2", gpa: "4.0", isPassing: true },
+    ],
+    // callback function
+    (err, data) => {
+      res.redirect("/students");
+    }
+  );
 });
-})
 
 // show
+app.get("/students/:id", (req, res) => {
+  Student.findById(req.params.id, (err, foundStudent) => {
+    console.log(err);
+    res.render("Show", {
+      student: foundStudent,
+    });
+  });
+});
 
 // Run the server
 app.listen("3000", () => {
