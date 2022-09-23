@@ -13,6 +13,9 @@ const Student = require("./models/students");
 // link our ENV variables to our app
 require("dotenv").config();
 
+//tells express to try to match requests with files in the directory called 'public'
+app.use(express.static('public'));
+
 // Middlewear
 
 // set view engine, creates link to JSX

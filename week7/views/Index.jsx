@@ -5,11 +5,10 @@ class Index extends React.Component {
     const { students } = this.props;
     console.log(students);
     return (
-      
       <DefaultLayout title={"StudentDashboard"}>
         <nav>
-        <a href={'/students/new'}>Add New Student</a>
-      </nav>
+          <a href={"/students/new"}>Add New Student</a>
+        </nav>
         <ul>
           {students.map((student, i) => {
             return (
@@ -22,7 +21,9 @@ class Index extends React.Component {
                   : "And is NOT Eligible to Graduate"}
                 {/* Student Name is ___ and is/isnt eligible 2 graduate */}
                 {/* ===========EDIT */}
-                <a href={`students/${student._id}/edit`}> Edit Student</a>
+                <div>
+                  <a href={`students/${student._id}/edit`}> Edit Student</a>
+                </div>
                 {/* ======Delete */}
                 <form
                   action={`/students/${student._id}?_method=DELETE`}
@@ -38,4 +39,4 @@ class Index extends React.Component {
     );
   }
 }
-module.exports = Index
+module.exports = Index;
