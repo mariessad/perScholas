@@ -9,6 +9,7 @@ const mongoose = require("mongoose");
 // override setting for CRUD methods
 const methodOverride = require("method-override");
 const Student = require("./models/students");
+const Teacher = require("./models/teachers");
 
 // link our ENV variables to our app
 require("dotenv").config();
@@ -55,10 +56,26 @@ app.get("/students", (req, res) => {
     });
   });
 });
+
+// index teachers
+app.get('/teachers', (req,res) =>{
+  Teacher.find({}, (err, allTeachers) => {
+    console.log(err);
+
+    res.render("TeacherIndex",{
+      teachers: allTeachers
+    })
+  })
+})
 // new
 app.get("/students/new", (req, res) => {
   res.render("New", {});
 });
+
+//new teachers
+app.get("/teachers/new", (req, res)=> {
+  res.render("NewTeacher", {})
+})
 // POST
 
 app.post("/students", (req, res) => {
@@ -75,6 +92,22 @@ app.post("/students", (req, res) => {
   res.redirect("/students");
 });
 
+// Teacher POST
+
+app.post("/teachers", (req, res) => {
+  if (req.body.isEmployed === "on") {
+    req.body.isEmployed = true;
+  } else {
+    req.body.isEmployed = false;
+  }
+
+  Teacher.create(req.body, (err, createdTeacher) => {
+    console.log(err);
+  });
+
+  res.redirect("/teachers");
+
+})
 // edit
 app.get("/students/:id/edit", (req, res) => {
   Student.findById(req.params.id, (err, foundStudent) => {
@@ -83,6 +116,22 @@ app.get("/students/:id/edit", (req, res) => {
       res.render("Edit", {
         student: foundStudent,
         //pass in the foundStudent so we can prefill the form
+      });
+    } else {
+      res.send({ msg: err.message });
+    }
+  });
+});
+
+// Teacher Edit
+
+app.get("/teachers/:id/edit", (req, res) => {
+  Teacher.findById(req.params.id, (err, foundTeacher) => {
+    console.log(err);
+    if (!err) {
+      res.render("TeacherEdit", {
+        teacher: foundTeacher,
+        //pass in the foundTeacher so we can prefill the form
       });
     } else {
       res.send({ msg: err.message });
@@ -108,6 +157,12 @@ app.delete("/students/:id", (req, res) => {
     res.redirect("/students");
   });
 });
+// Teacher DELETE
+app.delete("/teachers/:id", (req, res) => {
+  Teacher.findByIdAndRemove(req.params.id, (err, data) => {
+    res.redirect("/teachers");
+  });
+});
 // SEEDS -- a route where we create content dynamically
 
 app.get("/students/seed", (req, res) => {
@@ -129,6 +184,15 @@ app.get("/students/:id", (req, res) => {
     console.log(err);
     res.render("Show", {
       student: foundStudent,
+    });
+  });
+});
+// Teacher show
+app.get("/teachers/:id", (req, res) => {
+  Teacher.findById(req.params.id, (err, foundTeacher) => {
+    console.log(err);
+    res.render("Show", {
+      teacher: foundTeacher,
     });
   });
 });

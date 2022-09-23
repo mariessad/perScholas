@@ -1,0 +1,23 @@
+const React = require("react");
+const DefaultLayout = require("./layouts/default");
+class ShowTeacher extends React.Component {
+  render() {
+    const {teacher}= this.props;
+      return (
+      <DefaultLayout title={"Teacher Profile"}>
+        <div>
+            <nav>
+                <a href="/teachers"> Back2 Teacher Dashboard</a>
+            </nav>
+          <h1> Show Page </h1>
+          {teacher.name}'s has a degree/certificate from {teacher.education}
+          <br /> Teacher{" "}
+          {teacher.isEmployed
+            ? "Is Employed"
+            : "Is NOT Employed"}
+        </div>
+      </DefaultLayout>
+    );
+  }
+}
+module.exports = ShowTeacher;
